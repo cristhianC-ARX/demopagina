@@ -1412,8 +1412,8 @@
       }
 
       .bc-modal { padding: 8px; }
-      .bc-card { max-height: 95vh; border-radius: 20px; }
-      .bc-content { grid-template-columns: 1fr; max-height: 95vh; overflow-y: auto; }
+      .bc-card { max-height: 95vh; border-radius: 20px; overflow-y: auto; overflow-x: hidden; }
+      .bc-content { grid-template-columns: 1fr; min-height: unset; max-height: unset; overflow-y: visible; }
       .bc-left {
         padding: 28px 20px 20px;
         border-right: none;
@@ -1437,7 +1437,7 @@
       .bc-flag-pill img { width: 18px; height: 13px; }
       .bc-actions { flex-direction: column; gap: 8px; }
       .bc-btn { min-width: unset; padding: 12px 16px; font-size: 0.82rem; border-radius: 12px; }
-      .bc-close { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 0.85rem; }
+      .bc-close { top: 12px; right: 12px; width: 36px; height: 36px; font-size: 0.85rem; z-index: 20; }
       .bc-watermark { font-size: 6rem; }
     }
 
