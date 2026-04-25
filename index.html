@@ -1,0 +1,3365 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CC Consulting | Auditoría, Asesoría Fiscal y Financiera</title>
+  <meta name="description"
+    content="CC Consulting es una firma de auditoría y consultoría con presencia en Centroamérica y República Dominicana. Auditoría, asesoría fiscal, contabilidad, asesoría financiera y estudios de precios de transferencia." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --dark-green: #123c3d;
+      --dark-green-2: #0e2d2e;
+      --teal: #2dbab3;
+      --teal-light: #9be2dd;
+      --gold: #d8b06b;
+      --bg: #f5f8fa;
+      --white: #ffffff;
+      --text: #1e2d2e;
+      --text-muted: #5f7172;
+      --border: #dde8e9;
+      --shadow: 0 10px 30px rgba(18, 60, 61, 0.08);
+      --shadow-lg: 0 20px 60px rgba(18, 60, 61, 0.14);
+      --radius: 22px;
+      --radius-sm: 14px;
+      --transition: 0.35s ease;
+      --font-heading: 'Poppins', sans-serif;
+      --font-body: 'Inter', sans-serif;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--font-heading);
+      line-height: 1.12;
+      color: var(--dark-green);
+    }
+
+    p {
+      color: var(--text-muted);
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(100% - 32px, var(--container));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .bg-light {
+      background: var(--bg);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(45, 186, 179, 0.10);
+      color: var(--teal);
+      border: 1px solid rgba(45, 186, 179, 0.14);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+      font-family: var(--font-heading);
+    }
+
+    .section-header {
+      max-width: 760px;
+      margin: 0 auto 48px;
+      text-align: center;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+    }
+
+    .section-header p {
+      font-size: 1.02rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all var(--transition);
+      font-family: var(--font-heading);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      box-shadow: 0 14px 30px rgba(45, 186, 179, 0.24);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 36px rgba(45, 186, 179, 0.30);
+    }
+
+    .btn-outline-light {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.30);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline-light:hover {
+      transform: translateY(-3px);
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .btn-outline-dark {
+      background: transparent;
+      border-color: rgba(18, 60, 61, 0.18);
+      color: var(--dark-green);
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--dark-green);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .btn-full {
+      width: 100%;
+    }
+
+    /* ── NAVBAR ── */
+    .navbar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      padding: 10px 0;
+      background: rgba(7, 18, 23, 0.28);
+      backdrop-filter: blur(14px);
+      transition: all var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: var(--shadow);
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(18, 60, 61, 0.06);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    
+
+    .nav-logo img {
+      height: 140px;
+      width: auto;
+      transition: all var(--transition);
+      position: relative;
+      z-index: 2;
+      margin: -20px 0 -20px -10px;
+    }
+
+    .navbar.scrolled .nav-logo img {
+      height: 100px;
+      margin: -10px 0 -10px -5px;
+    }
+
+    .brand-copy {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.05;
+    }
+
+    .brand-copy strong {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .brand-copy span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .navbar.scrolled .brand-copy strong {
+      color: var(--dark-green);
+    }
+
+    .navbar.scrolled .brand-copy span {
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 999px;
+      transition: all var(--transition);
+    }
+
+    .navbar.scrolled .nav-links a {
+      color: var(--text);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .navbar.scrolled .nav-links a:hover,
+    .navbar.scrolled .nav-links a.active {
+      background: rgba(45, 186, 179, 0.10);
+      color: var(--teal);
+    }
+
+    .btn-nav {
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff !important;
+      box-shadow: 0 12px 24px rgba(45, 186, 179, 0.24);
+    }
+
+    .btn-nav:hover {
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2.5px;
+      background: #fff;
+      border-radius: 999px;
+      transition: all var(--transition);
+    }
+
+    .navbar.scrolled .hamburger span {
+      background: var(--dark-green);
+    }
+
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 0 100px;
+      background:
+        linear-gradient(135deg, rgba(8, 18, 24, 0.72) 0%, rgba(18, 60, 61, 0.60) 100%),
+        url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=80') center center / cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(45, 186, 179, 0.10), transparent 55%);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Remove old hero-box — now no box wrapper */
+    .hero-box {
+      background: none;
+      border: none;
+      backdrop-filter: none;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(45, 186, 179, 0.18);
+      border: 1px solid rgba(45, 186, 179, 0.30);
+      color: var(--teal-light);
+      font-size: 0.73rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      font-family: var(--font-heading);
+    }
+
+    .hero h1 {
+      color: #fff;
+      font-size: clamp(2rem, 3.6vw, 3rem);
+      line-height: 1.16;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--teal-light);
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.98rem;
+      max-width: 540px;
+      margin: 0 auto 32px;
+      line-height: 1.72;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 44px;
+    }
+
+    /* Stats — clean divider row */
+    .hero-mini-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 28px;
+    }
+
+    .hero-mini-stats div {
+      flex: 1;
+      min-width: 130px;
+      padding: 0 16px;
+    }
+
+    .hero-mini-stats div:not(:last-child) {
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .hero-mini-stats strong {
+      display: block;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+
+    .hero-mini-stats span {
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 0.78rem;
+      line-height: 1.4;
+    }
+
+    /* ── SERVICIOS ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* Row 2: 2 cards centered */
+    .services-grid .service-card:nth-child(4),
+    .services-grid .service-card:nth-child(5) {
+      grid-column: auto;
+    }
+
+    .services-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 66%;
+      margin: 22px auto 0;
+      align-items: start;
+    }
+
+    .service-card {
+      padding: 38px 32px;
+      border-radius: 24px;
+      background: #ffffff;
+      border: 1px solid rgba(45, 186, 179, 0.15);
+      box-shadow: 0 12px 36px -12px rgba(18, 60, 61, 0.1);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 6px;
+      background: linear-gradient(90deg, var(--teal), var(--dark-green));
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 24px 48px -12px rgba(18, 60, 61, 0.18);
+      border-color: rgba(45, 186, 179, 0.4);
+    }
+    
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(45, 186, 179, 0.15), rgba(45, 186, 179, 0.04));
+      color: var(--teal);
+      font-size: 1.7rem;
+      margin-bottom: 24px;
+      box-shadow: inset 0 0 0 1px rgba(45, 186, 179, 0.2);
+      transition: all 0.4s ease;
+    }
+
+    .service-card:hover .service-icon {
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      transform: scale(1.08) rotate(-6deg);
+      box-shadow: 0 12px 24px rgba(45, 186, 179, 0.35);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 14px;
+      color: var(--dark-green);
+      line-height: 1.3;
+    }
+
+    .service-card p {
+      font-size: 0.95rem;
+      margin-bottom: 22px;
+      line-height: 1.6;
+    }
+
+    .service-bullets {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(18, 60, 61, 0.08);
+      margin-top: 6px;
+    }
+
+    .service-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 0.92rem;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .service-bullets li::before {
+      content: '\f058';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      color: var(--teal);
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .service-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .service-chip {
+      background: rgba(18, 60, 61, 0.03);
+      border: 1px solid rgba(18, 60, 61, 0.09);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-family: var(--font-heading);
+    }
+
+    .service-chip:hover {
+      background: rgba(45, 186, 179, 0.1);
+      border-color: rgba(45, 186, 179, 0.3);
+      color: var(--dark-green);
+      transform: translateY(-2px);
+    }
+
+    /* Tech badge strip */
+    .tech-strip {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 44px;
+    }
+
+    .tech-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      font-size: 0.83rem;
+      font-weight: 600;
+      color: var(--dark-green);
+      font-family: var(--font-heading);
+    }
+
+    .tech-badge i {
+      color: var(--teal);
+      font-size: 0.85rem;
+    }
+
+    /* Infinite Marquee */
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      width: 100%;
+      position: relative;
+      margin-top: 34px;
+      padding: 10px 0;
+      -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+      mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+    }
+
+    .marquee-content {
+      display: inline-flex;
+      gap: 60px;
+      align-items: center;
+      animation: marquee 25s linear infinite;
+    }
+
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      from { transform: translateX(0); }
+      to { transform: translateX(calc(-50% - 30px)); }
+    }
+
+    .marquee-logo {
+      height: 40px;
+      max-width: 160px;
+      object-fit: contain;
+      filter: grayscale(100%) opacity(0.5);
+      transition: all 0.4s ease;
+      cursor: pointer;
+    }
+
+    .marquee-logo:hover {
+      filter: grayscale(0%) opacity(1) !important;
+      transform: scale(1.05);
+    }
+
+    /* ── ABOUT (tabs) ── */
+    .about-header {
+      text-align: center;
+      margin-bottom: 36px;
+    }
+
+    .about-header h2 {
+      font-size: clamp(1.95rem, 3vw, 2.8rem);
+      margin-bottom: 10px;
+    }
+
+    .about-header p {
+      font-size: 1rem;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    /* Tab nav */
+    .about-tabs-nav {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .tab-btn i {
+      font-size: 0.85rem;
+    }
+
+    .tab-btn:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      border-color: transparent;
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(45, 186, 179, 0.22);
+    }
+
+    /* Tab panels */
+    .about-tab-panel {
+      display: none;
+      animation: tabFadeIn 0.4s ease;
+    }
+
+    .about-tab-panel.active {
+      display: block;
+    }
+
+    @keyframes tabFadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Panel 1 — Quiénes somos: 2 col layout */
+    .about-panel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .about-text-card {
+      padding: 30px 28px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .about-text-card p {
+      font-size: 0.97rem;
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .about-text-card p+p {
+      margin-top: 14px;
+    }
+
+    /* Panel 2 — Experiencia: tag chips grid */
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .expertise-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 20px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all var(--transition);
+    }
+
+    .expertise-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(45, 186, 179, 0.22);
+    }
+
+    .expertise-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(45, 186, 179, 0.12);
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.05rem;
+    }
+
+    .expertise-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    .expertise-item p {
+      font-size: 0.86rem;
+      margin: 0;
+    }
+
+    /* Panel 3 — Diferenciadores: 3 cards */
+    .diff-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .diff-card {
+      padding: 28px 24px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: center;
+      transition: all var(--transition);
+    }
+
+    .diff-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(45, 186, 179, 0.22);
+    }
+
+    .diff-icon {
+      width: 60px;
+      height: 60px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(45, 186, 179, 0.15), rgba(18, 60, 61, 0.08));
+      color: var(--teal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin: 0 auto 18px;
+    }
+
+    .diff-card h4 {
+      font-size: 1.05rem;
+      margin-bottom: 10px;
+    }
+
+    .diff-card p {
+      font-size: 0.9rem;
+      margin: 0;
+    }
+
+    /* ── TEAM ── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* Last 2 cards centered */
+    .team-row-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+      max-width: 66%;
+      margin: 22px auto 0;
+    }
+
+    .team-card {
+      padding: 28px 22px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: all 0.35s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .team-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .team-card::after {
+      content: '\f105';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(45, 186, 179, 0.12);
+      color: var(--teal);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      opacity: 0;
+      transform: translateX(-6px);
+      transition: all 0.35s ease;
+    }
+    .team-card:hover::after { opacity: 1; transform: translateX(0); }
+
+    .team-avatar-img {
+      width: 78px; height: 78px;
+      border-radius: 22px;
+      object-fit: cover; object-position: top center;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 28px rgba(45, 186, 179, 0.24);
+    }
+
+    .team-avatar {
+      width: 78px;
+      height: 78px;
+      border-radius: 22px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 28px rgba(45, 186, 179, 0.24);
+    }
+
+    .team-card h4 {
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      display: block;
+      color: var(--teal);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+    }
+
+    .team-card p {
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+    }
+
+    .flags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .flags img {
+      width: 28px;
+      height: 20px;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+      object-fit: cover;
+    }
+
+    .view-card-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(45, 186, 179, 0.08);
+      color: var(--teal);
+      font-family: var(--font-heading);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(45, 186, 179, 0.2);
+      transition: all 0.3s ease;
+    }
+    .team-card:hover .view-card-cta {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+      transform: translateX(4px);
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: start;
+    }
+
+    .contact-panel,
+    .contact-form-wrap {
+      padding: 32px 28px;
+      border-radius: 24px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-panel {
+      background: linear-gradient(180deg, #fff, #f8fbfb);
+    }
+
+    .contact-panel h3 {
+      font-size: 1.55rem;
+      margin-bottom: 10px;
+    }
+
+    .contact-panel>p {
+      margin-bottom: 16px;
+    }
+
+    .contact-info-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 16px;
+    }
+
+    .info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 16px;
+      border-radius: 18px;
+      background: #fff;
+      border: 1px solid var(--border);
+    }
+
+    .info-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(45, 186, 179, 0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+
+    .info-item strong {
+      display: block;
+      font-size: 0.92rem;
+      margin-bottom: 4px;
+      color: var(--dark-green);
+    }
+
+    .info-item span {
+      display: block;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .social-links a {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(45, 186, 179, 0.10);
+      color: var(--teal);
+      transition: all var(--transition);
+    }
+
+    .social-links a:hover {
+      background: var(--teal);
+      color: #fff;
+      transform: translateY(-3px);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .form-group label {
+      font-family: var(--font-heading);
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark-green);
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 15px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: #f8fbfb;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: all var(--transition);
+    }
+
+    .form-group textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      background: #fff;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(45, 186, 179, 0.12);
+    }
+
+    .form-note {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 26px 10px;
+    }
+
+    .form-success.show {
+      display: block;
+    }
+
+    .success-icon {
+      font-size: 4rem;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    /* ── FOOTER ── */
+    .footer {
+      background: linear-gradient(135deg, #0d2d30 0%, #123f42 55%, #0f2b2d 100%);
+      color: rgba(255, 255, 255, 0.78);
+      padding: 72px 0 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(45, 186, 179, 0.16), transparent 70%);
+      pointer-events: none;
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr 1fr 1.2fr;
+      gap: 30px;
+      padding-bottom: 34px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Larger footer logo without changing footer height */
+    .footer-logo {
+      height: 96px;
+      width: auto;
+      margin-bottom: 16px;
+      filter: brightness(10);
+    }
+
+    .footer-brand p {
+      max-width: 360px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
+    .footer-col h5 {
+      color: #fff;
+      font-size: 0.9rem;
+      margin-bottom: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-family: var(--font-heading);
+    }
+
+    .footer-col ul {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer-col ul li,
+    .footer-col ul li a {
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 0.9rem;
+      transition: color var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: var(--teal-light);
+    }
+
+    .footer-contact li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .footer-contact i {
+      color: var(--teal-light);
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-bottom p {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.46);
+    }
+
+    /* ── SCROLL TOP ── */
+    .scroll-top {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      width: 48px;
+      height: 48px;
+      border: none;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(45, 186, 179, 0.26);
+      opacity: 0;
+      pointer-events: none;
+      transition: all var(--transition);
+      z-index: 998;
+    }
+
+    .scroll-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .scroll-top:hover {
+      transform: translateY(-4px);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+
+      .services-grid,
+      .team-grid,
+      .footer-top,
+      .diff-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services-row-2,
+      .team-row-2 {
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-panel-grid,
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      .diff-grid,
+      .expertise-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 78px 0;
+      }
+
+      .nav-links {
+        position: fixed;
+        top: 88px;
+        left: 16px;
+        right: 16px;
+        background: #fff;
+        border-radius: 18px;
+        padding: 20px;
+        box-shadow: var(--shadow-lg);
+        border: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all var(--transition);
+      }
+
+      .nav-links.open {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .nav-links a {
+        color: var(--text) !important;
+        width: 100%;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 130px 0 80px;
+      }
+
+      .hero-box {
+        padding: 0;
+      }
+
+      .brand-copy {
+        display: none;
+      }
+
+      .hero-mini-stats div:not(:last-child) {
+        border-right: none;
+        margin-right: 0;
+        padding-right: 0;
+        padding-bottom: 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        margin-bottom: 16px;
+      }
+
+      .services-grid,
+      .services-row-2,
+      .team-grid,
+      .team-row-2,
+      .footer-top,
+      .form-row {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+
+      .hero-actions,
+      .hero-mini-stats,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .bc-modal { padding: 12px; }
+      .bc-content { grid-template-columns: 1fr; max-height: 92vh; }
+      .bc-left {
+        padding: 36px 24px 28px;
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .bc-right { padding: 28px 24px; }
+      .bc-photo-wrap { width: 160px; height: 160px; }
+      .bc-name { font-size: 1.4rem; }
+      .bc-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+      .bc-stat strong { font-size: 1.1rem; }
+      .bc-watermark { font-size: 8rem; }
+    }
+
+    @media (max-width: 480px) {
+      .btn {
+        width: 100%;
+      }
+
+      .hero h1 {
+        font-size: clamp(2rem, 9vw, 3rem);
+      }
+
+      .chatbot-window {
+        width: calc(100vw - 32px);
+        left: 16px;
+        bottom: 84px;
+        height: 75vh;
+      }
+    }
+
+    /* ── WOW WHATSAPP WIDGET ── */
+    .wa-widget {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 16px;
+    }
+
+    .wa-fab {
+      width: 60px;
+      height: 60px;
+      background: var(--teal);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(45, 186, 179, 0.4);
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      position: relative;
+    }
+
+    .wa-fab::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid rgba(45, 186, 179, 0.6);
+      animation: wa-pulse 1.8s infinite;
+      z-index: -1;
+    }
+
+    .wa-fab:hover {
+      transform: scale(1.08);
+    }
+
+    @keyframes wa-pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: scale(1.6);
+        opacity: 0;
+      }
+    }
+
+    .wa-fab.open {
+      transform: scale(0.9) rotate(90deg);
+      background: var(--teal);
+      box-shadow: 0 4px 12px rgba(45, 186, 179, 0.3);
+    }
+
+    .wa-fab.open::before {
+      display: none;
+    }
+
+    .wa-window {
+      position: absolute;
+      bottom: 80px;
+      right: 0;
+      width: 320px;
+      max-width: calc(100vw - 48px);
+      background: #ece5dd;
+      border-radius: 18px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.22);
+      overflow: hidden;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px) scale(0.95);
+      transform-origin: bottom right;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wa-window.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0) scale(1);
+    }
+
+    .wa-header {
+      background: var(--dark-green);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      position: relative;
+    }
+
+    .wa-avatar {
+      position: relative;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px;
+    }
+
+    .wa-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .wa-status {
+      position: absolute;
+      bottom: 2px;
+      right: -2px;
+      width: 12px;
+      height: 12px;
+      background: #25D366;
+      border: 2px solid #fff;
+      border-radius: 50%;
+    }
+
+    .wa-info h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin: 0 0 2px 0;
+    }
+
+    .wa-info p {
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 0.82rem;
+      margin: 0;
+    }
+
+    .wa-body {
+      padding: 24px 20px;
+      background-color: #e5ddd5;
+      background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
+      background-blend-mode: multiply;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wa-chat-bubble {
+      background: #fff;
+      padding: 12px 14px;
+      border-radius: 0 16px 16px 16px;
+      position: relative;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      width: 90%;
+      animation: wa-bubble-pop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      opacity: 0;
+      transform: translateY(10px) scale(0.9);
+      animation-delay: 0.2s;
+    }
+
+    @keyframes wa-bubble-pop {
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .wa-chat-bubble::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10px;
+      border-top: 14px solid #fff;
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+    }
+
+    .wa-chat-bubble strong {
+      display: block;
+      color: #075E54;
+      font-size: 0.88rem;
+      margin-bottom: 6px;
+    }
+
+    .wa-chat-bubble p {
+      color: #303030;
+      font-size: 0.96rem;
+      line-height: 1.45;
+      margin: 0 0 8px 0;
+    }
+
+    .wa-time {
+      display: block;
+      text-align: right;
+      color: #999;
+      font-size: 0.72rem;
+    }
+
+    .wa-footer {
+      padding: 16px;
+      background: #f0f0f0;
+      border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .wa-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--teal);
+      color: #fff;
+      padding: 14px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(45, 186, 179, 0.2);
+      transition: all 0.2s;
+    }
+
+    .wa-cta:hover {
+      background: #1a8d87;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(45, 186, 179, 0.3);
+      color: #fff;
+    }
+
+    /* ── CHATBOT WIDGET ── */
+    .chatbot-fab {
+      position: fixed;
+      bottom: 24px;
+      left: 24px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 12px 28px rgba(45, 186, 179, 0.35);
+      z-index: 999;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .chatbot-fab:hover {
+      transform: scale(1.08);
+    }
+
+    .chatbot-window {
+      position: fixed;
+      bottom: 100px;
+      left: 24px;
+      width: 380px;
+      max-width: calc(100vw - 48px);
+      height: 580px;
+      max-height: calc(100vh - 120px);
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(20px) scale(0.95);
+      transform-origin: bottom left;
+      transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+      border: 1px solid var(--border);
+    }
+
+    .chatbot-window.active {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateY(0) scale(1);
+    }
+
+    .chat-header {
+      background: linear-gradient(135deg, var(--teal), var(--dark-green));
+      color: #fff;
+      padding: 20px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .chat-header-info {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .chat-avatar {
+      width: 44px;
+      height: 44px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .chat-header-text h4 {
+      font-size: 1.1rem;
+      margin: 0 0 4px 0;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .chat-header-text span {
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.85);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chat-header-text span::before {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #25D366;
+      border-radius: 50%;
+      display: inline-block;
+      box-shadow: 0 0 0 2px rgba(37, 211, 102, 0.3);
+    }
+
+    .chat-close {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.35rem;
+      cursor: pointer;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+
+    .chat-close:hover {
+      opacity: 1;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 24px 20px;
+      overflow-y: auto;
+      background: #fdfdfd;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .chat-msg {
+      max-width: 85%;
+      font-size: 0.94rem;
+      line-height: 1.5;
+      padding: 14px 18px;
+      border-radius: 20px;
+      animation: msg-in 0.3s ease forwards;
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    @keyframes msg-in {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .chat-msg.bot {
+      background: #fff;
+      color: var(--text);
+      border: 1px solid var(--border);
+      align-self: flex-start;
+      border-bottom-left-radius: 6px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.03);
+    }
+
+    .chat-msg.user {
+      background: var(--teal);
+      color: #fff;
+      align-self: flex-end;
+      border-bottom-right-radius: 6px;
+      box-shadow: 0 3px 10px rgba(45, 186, 179, 0.25);
+    }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: -2px;
+      animation: msg-in 0.3s ease forwards;
+      opacity: 0;
+      animation-delay: 0.4s;
+    }
+
+    .chat-chip {
+      background: #fff;
+      color: var(--teal);
+      border: 1px solid rgba(45, 186, 179, 0.3);
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+    }
+
+    .chat-chip:hover {
+      background: var(--teal);
+      color: #fff;
+      border-color: var(--teal);
+    }
+
+    .chat-footer {
+      padding: 18px 20px;
+      background: #fff;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+    }
+
+    .chat-input {
+      flex: 1;
+      border: 1px solid var(--border);
+      background: #f8fbfb;
+      border-radius: 999px;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+      outline: none;
+      transition: all 0.2s;
+    }
+
+    .chat-input:focus {
+      border-color: var(--teal);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(45, 186, 179, 0.1);
+    }
+
+    .chat-send {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      font-size: 1.1rem;
+    }
+
+    .chat-send:hover {
+      background: var(--dark-green);
+      transform: scale(1.05);
+    }
+
+    .typing-indicator {
+      display: flex;
+      gap: 5px;
+      padding: 6px 10px;
+    }
+
+    .typing-indicator span {
+      width: 6px;
+      height: 6px;
+      background: #bdc3c7;
+      border-radius: 50%;
+      animation: typing 1.4s infinite ease-in-out both;
+    }
+
+    .typing-indicator span:nth-child(1) {
+      animation-delay: -0.32s;
+    }
+
+    .typing-indicator span:nth-child(2) {
+      animation-delay: -0.16s;
+    }
+
+    @keyframes typing {
+
+      0%,
+      80%,
+      100% {
+        transform: scale(0);
+        opacity: 0.5;
+      }
+
+      40% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    /* Override scroll top placement */
+    .scroll-top {
+      bottom: 100px !important;
+    }
+
+    /* ─── BUSINESS CARD MODAL ─── */
+    .bc-modal {
+      position: fixed; inset: 0;
+      z-index: 10000;
+      display: flex; align-items: center; justify-content: center;
+      padding: 24px;
+      background: rgba(8, 18, 24, 0);
+      backdrop-filter: blur(0px);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .bc-modal.open {
+      opacity: 1;
+      pointer-events: all;
+      background: rgba(8, 18, 24, 0.72);
+      backdrop-filter: blur(14px);
+    }
+    .bc-card {
+      position: relative;
+      width: 100%;
+      max-width: 880px;
+      max-height: 92vh;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #0e2d2e;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(45, 186, 179, 0.15) inset;
+      transform: translateY(40px) scale(0.92) rotateX(-8deg);
+      opacity: 0;
+      transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      perspective: 1200px;
+    }
+    .bc-modal.open .bc-card {
+      transform: translateY(0) scale(1) rotateX(0);
+      opacity: 1;
+    }
+
+    .bc-card::before {
+      content: '';
+      position: absolute;
+      inset: -50%;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(45, 186, 179, 0.4), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(216, 176, 107, 0.25), transparent 45%),
+        radial-gradient(circle at 50% 50%, rgba(155, 226, 221, 0.18), transparent 50%);
+      animation: bc-mesh 14s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 0;
+    }
+    @keyframes bc-mesh {
+      0%, 100% { transform: rotate(0deg) scale(1); }
+      50% { transform: rotate(180deg) scale(1.1); }
+    }
+    .bc-card::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: overlay;
+    }
+
+    .bc-content {
+      position: relative; z-index: 2;
+      display: grid;
+      grid-template-columns: 1.05fr 1.4fr;
+      min-height: 560px;
+      max-height: 92vh;
+    }
+
+    .bc-left {
+      position: relative;
+      padding: 44px 36px;
+      background: linear-gradient(160deg, rgba(8, 18, 24, 0.55) 0%, rgba(18, 60, 61, 0.35) 100%);
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex; flex-direction: column;
+    }
+    .bc-watermark {
+      position: absolute;
+      bottom: -60px; left: -40px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14rem;
+      font-weight: 800;
+      color: rgba(255, 255, 255, 0.025);
+      letter-spacing: -0.05em;
+      pointer-events: none; user-select: none;
+      z-index: 0;
+    }
+
+    .bc-photo-wrap {
+      position: relative;
+      width: 220px; height: 220px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      padding: 4px;
+      background: conic-gradient(from 0deg, var(--teal), var(--gold), var(--teal-light), var(--teal));
+      animation: bc-spin 8s linear infinite;
+      box-shadow: 0 20px 50px rgba(45, 186, 179, 0.35);
+    }
+    @keyframes bc-spin { to { transform: rotate(360deg); } }
+    .bc-photo {
+      width: 100%; height: 100%;
+      border-radius: 50%;
+      object-fit: cover; object-position: top center;
+      border: 4px solid #0e2d2e;
+      background: #0e2d2e;
+      animation: bc-spin 8s linear infinite reverse;
+    }
+
+    .bc-name-block { text-align: center; position: relative; z-index: 1; }
+    .bc-name {
+      color: #fff;
+      font-size: 1.7rem; font-weight: 700;
+      margin-bottom: 6px;
+      letter-spacing: -0.01em;
+      line-height: 1.15;
+    }
+    .bc-role {
+      display: inline-block;
+      color: var(--teal-light);
+      font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(45, 186, 179, 0.12);
+      border: 1px solid rgba(45, 186, 179, 0.25);
+      margin-bottom: 22px;
+    }
+
+    .bc-credentials {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center;
+      margin-top: auto;
+      padding-top: 24px;
+      padding-bottom: 28px;
+    }
+    .bc-cred-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 14px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      color: rgba(255, 255, 255, 0.92);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.78rem; font-weight: 600;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .bc-cred-badge:hover {
+      background: rgba(45, 186, 179, 0.18);
+      border-color: rgba(45, 186, 179, 0.4);
+      transform: translateY(-2px);
+    }
+    .bc-cred-badge i { color: var(--gold); }
+
+    .bc-right {
+      padding: 44px 40px;
+      overflow-y: auto;
+      position: relative;
+      background: rgba(8, 18, 24, 0.4);
+    }
+    .bc-right::-webkit-scrollbar { width: 6px; }
+    .bc-right::-webkit-scrollbar-thumb {
+      background: rgba(45, 186, 179, 0.3);
+      border-radius: 999px;
+    }
+
+    .bc-section {
+      margin-bottom: 26px;
+      opacity: 0;
+      transform: translateY(15px);
+      animation: bc-fadein 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .bc-modal.open .bc-section:nth-child(1) { animation-delay: 0.3s; }
+    .bc-modal.open .bc-section:nth-child(2) { animation-delay: 0.4s; }
+    .bc-modal.open .bc-section:nth-child(3) { animation-delay: 0.5s; }
+    .bc-modal.open .bc-section:nth-child(4) { animation-delay: 0.6s; }
+    .bc-modal.open .bc-section:nth-child(5) { animation-delay: 0.7s; }
+    @keyframes bc-fadein { to { opacity: 1; transform: translateY(0); } }
+
+    .bc-section-label {
+      display: flex; align-items: center; gap: 10px;
+      color: var(--teal-light);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.7rem; font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .bc-section-label::before {
+      content: '';
+      width: 24px; height: 1.5px;
+      background: linear-gradient(90deg, var(--teal), transparent);
+    }
+
+    .bc-bio {
+      color: rgba(255, 255, 255, 0.85);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    .bc-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .bc-stat {
+      padding: 14px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .bc-stat:hover {
+      background: rgba(45, 186, 179, 0.1);
+      border-color: rgba(45, 186, 179, 0.3);
+      transform: translateY(-3px);
+    }
+    .bc-stat strong {
+      display: block;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem; font-weight: 700;
+      margin-bottom: 3px;
+      background: linear-gradient(135deg, #fff, var(--teal-light));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .bc-stat span {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 0.72rem;
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0.05em;
+    }
+
+    .bc-specialties { display: flex; flex-wrap: wrap; gap: 8px; }
+    .bc-spec {
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(216, 176, 107, 0.1);
+      border: 1px solid rgba(216, 176, 107, 0.25);
+      color: #e8c994;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem; font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .bc-spec:hover {
+      background: rgba(216, 176, 107, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .bc-flags-detail { display: flex; flex-wrap: wrap; gap: 10px; }
+    .bc-flag-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 7px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: rgba(255, 255, 255, 0.85);
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem; font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    .bc-flag-pill:hover {
+      background: rgba(45, 186, 179, 0.12);
+      border-color: rgba(45, 186, 179, 0.3);
+    }
+    .bc-flag-pill img {
+      width: 22px; height: 16px;
+      border-radius: 2px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      object-fit: cover;
+    }
+
+    .bc-actions { display: flex; gap: 10px; margin-top: 8px; flex-wrap: wrap; }
+    .bc-btn {
+      flex: 1;
+      min-width: 140px;
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: 9px;
+      padding: 13px 18px;
+      border-radius: 14px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.88rem; font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: none;
+    }
+    .bc-btn-primary {
+      background: linear-gradient(135deg, var(--teal), #1a8d87);
+      color: #fff;
+      box-shadow: 0 12px 28px rgba(45, 186, 179, 0.35);
+    }
+    .bc-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 36px rgba(45, 186, 179, 0.45);
+    }
+    .bc-btn-ghost {
+      background: rgba(255, 255, 255, 0.06);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+    }
+    .bc-btn-ghost:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(45, 186, 179, 0.4);
+      color: var(--teal-light);
+      transform: translateY(-3px);
+    }
+
+    .bc-close {
+      position: absolute;
+      top: 18px; right: 18px;
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #fff;
+      cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+    .bc-close:hover {
+      background: rgba(255, 78, 78, 0.85);
+      border-color: rgba(255, 78, 78, 0.4);
+      transform: rotate(90deg) scale(1.1);
+    }
+
+    .bc-deco-dot {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0;
+      animation: bc-float 4s ease-in-out infinite, bc-dotin 0.8s 0.4s forwards;
+    }
+    .bc-deco-dot:nth-child(2) {
+      top: 60px; right: 60px;
+      width: 8px; height: 8px;
+      background: var(--teal);
+      box-shadow: 0 0 20px var(--teal);
+      animation-delay: 0s, 0.4s;
+    }
+    .bc-deco-dot:nth-child(3) {
+      top: 200px; right: 30px;
+      width: 5px; height: 5px;
+      background: var(--gold);
+      box-shadow: 0 0 16px var(--gold);
+      animation-delay: 1s, 0.5s;
+    }
+    .bc-deco-dot:nth-child(4) {
+      bottom: 80px; right: 80px;
+      width: 6px; height: 6px;
+      background: var(--teal-light);
+      box-shadow: 0 0 14px var(--teal-light);
+      animation-delay: 2s, 0.6s;
+    }
+    @keyframes bc-float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-12px) translateX(6px); }
+    }
+    @keyframes bc-dotin { to { opacity: 1; } }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#inicio" class="nav-logo" aria-label="CC Consulting">
+        <img src="https://i.ibb.co/jP2VLgYp/Designer-4.png" alt="CC Consulting Logo" />
+        <div class="brand-copy">
+          <strong>CC Consulting</strong>
+          <span>Auditoría · Fiscal · Financiero</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Inicio</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a href="#equipo">Equipo</a>
+        <a href="#contacto" class="btn-nav">Contacto</a>
+      </nav>
+
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="container hero-content" data-aos="fade-up" data-aos-duration="1000">
+
+      <h1>Soluciones financieras y fiscales para el <em>crecimiento sostenible</em> de tu empresa</h1>
+
+      <p>
+        Ayudamos a empresas a tomar mejores decisiones con servicios de auditoría,
+        asesoría fiscal, asesoría financiera, contabilidad y precios de transferencia.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-primary">Hablar con un experto</a>
+        <a href="#servicios" class="btn btn-outline-light">Ver servicios</a>
+      </div>
+
+      <div class="hero-mini-stats">
+        <div>
+          <strong>Centroamérica</strong>
+          <span>y República Dominicana</span>
+        </div>
+        <div>
+          <strong>+20 años</strong>
+          <span>de experiencia en liderazgo</span>
+        </div>
+        <div>
+          <strong>Visión regional</strong>
+          <span>en finanzas, fiscalidad y auditoría</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Servicios</span>
+        <h2>Servicios clave para empresas que necesitan control, cumplimiento y crecimiento</h2>
+        <p>Un portafolio enfocado en las áreas que más valor aportan a tus decisiones empresariales.</p>
+      </div>
+
+      <!-- Fila 1: 3 servicios principales -->
+      <div class="services-grid">
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h3>Asesoría fiscal y tributaria</h3>
+          <p>Análisis de riesgos y situación fiscal del negocio para garantizar salud financiera e impositiva.</p>
+          <ul class="service-bullets">
+            <li>Cumplimiento fiscal</li>
+            <li>Planeación fiscal</li>
+            <li>Acompañamiento estratégico orientado a la reducción de riesgos fiscales</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Asesoría financiera y procesos</h3>
+          <p>Validamos tu situación financiera y recomendamos las mejores prácticas para la rentabilización de tu
+            empresa.</p>
+          <ul class="service-bullets">
+            <li>
+              <div style="display: flex; flex-direction: column;">
+                <span>Radiografía financiera</span>
+                <div class="service-chips">
+                  <span class="service-chip">Cash Flow / Flujo de caja</span>
+                  <span class="service-chip">Apalancamiento</span>
+                </div>
+              </div>
+            </li>
+            <li>Levantamiento de procesos</li>
+            <li>Implementación de acciones a corto y largo plazo</li>
+            <li>Estrategias financieras reales</li>
+          </ul>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="service-icon"><i class="fas fa-people-arrows"></i></div>
+          <h3>Precios de transferencia</h3>
+          <p>Estudios de impacto financiero corporativo, herramienta de gestión más que obligación fiscal.</p>
+          <ul class="service-bullets">
+            <li>Mejores márgenes</li>
+            <li>Trasladar el valor del negocio donde corresponde</li>
+            <li>Reducción de márgenes de imposición</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Fila 2: 2 servicios centrados -->
+      <div class="services-row-2">
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+          <h3>Auditoría</h3>
+          <p>Auditorías financieras y de cumplimiento con enfoque técnico, ejecutivo y confiable para generar seguridad
+            y claridad.</p>
+        </article>
+
+        <article class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon"><i class="fas fa-calculator"></i></div>
+          <h3>Contabilidad</h3>
+          <p>Información contable precisa, ordenada y oportuna.</p>
+          <ul class="service-bullets">
+            <li>
+              <div style="display: flex; flex-direction: column;">
+                <span>Elaboración y manejo de libros contables</span>
+                <div class="service-chips">
+                  <span class="service-chip">Balance General</span>
+                  <span class="service-chip">Estado de Resultados</span>
+                  <span class="service-chip">Flujo de Efectivo</span>
+                  <span class="service-chip">Diario y Mayor General</span>
+                  <span class="service-chip">Libros IVA (Compras/Ventas)</span>
+                  <span class="service-chip">Inventarios</span>
+                </div>
+              </div>
+            </li>
+            <li>Presentación de declaraciones mensuales.</li>
+            <li>Registro de facturas de compra y venta.</li>
+            <li>Gestión de retenciones.</li>
+          </ul>
+        </article>
+      </div>
+
+      <!-- Sistemas que trabajamos -->
+      <div style="text-align: center; margin-top: 64px;" data-aos="fade-up">
+        <h3 style="font-family: var(--font-heading); font-size: 1.5rem; color: var(--dark-green); margin-bottom: 30px;">Sistemas y tecnologías con las que trabajamos</h3>
+        
+        <div class="marquee-container">
+          <div class="marquee-content">
+            <!-- Set 1 -->
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+            <img class="marquee-logo" src="https://i.ibb.co/rfq47f1M/Odoo-Official-Logo.png" alt="Odoo" style="height: 38px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure - IA" style="height: 36px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI - Análisis de Datos" style="height: 36px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT - Automatización e IA" style="height: 36px;">
+            <!-- Set 2 for seamless loop -->
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+            <img class="marquee-logo" src="https://i.ibb.co/rfq47f1M/Odoo-Official-Logo.png" alt="Odoo" style="height: 38px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg" alt="Microsoft Azure - IA" style="height: 36px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI - Análisis de Datos" style="height: 36px;">
+            <img class="marquee-logo" src="https://upload.wikimedia.org/wikipedia/commons/0/04/ChatGPT_logo.svg" alt="ChatGPT - Automatización e IA" style="height: 36px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALENDARIO FISCAL -->
+  <section class="section" id="calendario" style="background: linear-gradient(180deg, var(--white), var(--bg));">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Calendario</span>
+        <h2>Calendario Fiscal de Centroamérica</h2>
+        <p>Mantén al día tus obligaciones tributarias en la región conociendo las fechas relevantes de cumplimiento.</p>
+      </div>
+      
+      <div style="background: #fff; border-radius: 22px; border: 1px solid var(--border); box-shadow: var(--shadow); padding: 42px 32px; max-width: 800px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+          <i class="far fa-calendar-alt" style="font-size: 3.5rem; color: var(--teal); margin-bottom: 20px;"></i>
+          <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: var(--dark-green); margin-bottom: 12px;">Próximos Vencimientos y Fechas Clave</h3>
+          <p style="margin-bottom: 24px;">Consulte los vencimientos de IVA, ISR, retenciones y aportes patronales para asegurar su cumplimiento normativo.</p>
+          <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-bottom: 34px;">
+              <span class="tech-badge"><img src="https://flagcdn.com/gt.svg" style="width:20px; border-radius:2px;"> Guatemala</span>
+              <span class="tech-badge"><img src="https://flagcdn.com/sv.svg" style="width:20px; border-radius:2px;"> El Salvador</span>
+              <span class="tech-badge"><img src="https://flagcdn.com/hn.svg" style="width:20px; border-radius:2px;"> Honduras</span>
+              <span class="tech-badge"><img src="https://flagcdn.com/ni.svg" style="width:20px; border-radius:2px;"> Nicaragua</span>
+              <span class="tech-badge"><img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cr.svg" style="width:20px; border-radius:2px;"> Costa Rica</span>
+          </div>
+          <a href="#contacto" class="btn btn-outline-dark">Solicitar acceso a nuestro reporte fiscal</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALIDAD FISCAL -->
+  <section class="section bg-light" id="actualidad">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Noticias</span>
+        <h2>Actualidad Fiscal</h2>
+        <p>Novedades, reformas tributarias y cambios regulatorios importantes para las empresas en la región.</p>
+      </div>
+
+      <div class="services-grid">
+        <article class="service-card" data-aos="fade-up">
+          <div class="service-icon" style="background: rgba(216, 176, 107, 0.15); color: var(--gold);"><i class="fas fa-newspaper"></i></div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Guatemala</span>
+          <h3 style="margin-top: 6px;">Nuevas disposiciones FEL</h3>
+          <p>Conozca los lineamientos recientes de SAT para la emisión y validación de facturas electrónicas masivas...</p>
+        </article>
+        <article class="service-card" data-aos="fade-up" data-aos-delay="60">
+          <div class="service-icon" style="background: rgba(216, 176, 107, 0.15); color: var(--gold);"><i class="fas fa-gavel"></i></div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">El Salvador</span>
+          <h3 style="margin-top: 6px;">Actualización en Ley de Inversiones</h3>
+          <p>Detalles sobre incentivos fiscales y garantías para inversionistas locales e internacionales en el territorio.</p>
+        </article>
+        <article class="service-card" data-aos="fade-up" data-aos-delay="120">
+          <div class="service-icon" style="background: rgba(216, 176, 107, 0.15); color: var(--gold);"><i class="fas fa-book-open"></i></div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); font-weight: bold; text-transform: uppercase;">Regional</span>
+          <h3 style="margin-top: 6px;">Auditoría de Cierre Fiscal</h3>
+          <p>Los puntos más importantes a revisar previo al cierre fiscal anual para evitar inconsistencias contables.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIÉNES SOMOS -->
+  <section class="section bg-light" id="nosotros">
+    <div class="container">
+
+      <!-- Header -->
+      <div class="about-header" data-aos="fade-up">
+        <span class="section-tag">Quiénes somos</span>
+        <h2>Una firma con visión regional, alto nivel técnico y enfoque estratégico</h2>
+        <p>Conoce quiénes somos, en qué somos expertos y qué nos diferencia como tu socio estratégico.</p>
+      </div>
+
+      <!-- Tab nav -->
+      <div class="about-tabs-nav" data-aos="fade-up">
+        <button class="tab-btn active" data-tab="tab-who">
+          La firma
+        </button>
+        <button class="tab-btn" data-tab="tab-exp">
+          Nuestra experiencia
+        </button>
+        <button class="tab-btn" data-tab="tab-diff">
+          Diferenciadores
+        </button>
+      </div>
+
+      <!-- Panel 1: La firma -->
+      <div class="about-tab-panel active" id="tab-who" data-aos="fade-up">
+        <div class="about-panel-grid">
+          <div class="about-text-card">
+            <p>En CC Consulting somos una firma de auditoría y consultoría con presencia integral en Centroamérica y
+              República Dominicana. Fundada en 2022, hemos consolidado una trayectoria de excelencia y confiabilidad.
+            </p>
+            <p>Brindamos soluciones integrales a empresas de diversos sectores y tamaños, desde corporaciones
+              multinacionales hasta asociaciones y entidades sin fines de lucro.</p>
+          </div>
+          <div class="about-text-card">
+            <p>Nuestro equipo cuenta con maestrías, certificaciones internacionales y profundo conocimiento de los
+              entornos fiscales, financieros y regulatorios de la región.</p>
+            <p>CC Consulting es el socio estratégico que su empresa necesita para navegar con confianza los desafíos
+              financieros, fiscales y regulatorios de Centroamérica y República Dominicana.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel 2: Experiencia -->
+      <div class="about-tab-panel" id="tab-exp">
+        <div class="expertise-grid">
+          <div class="expertise-item">
+            <div>
+              <h4>NIIF</h4>
+              <p>Normas Internacionales de Información Financiera</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div>
+              <h4>NIA</h4>
+              <p>Normas Internacionales de Auditoría</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div>
+              <h4>Regímenes fiscales regionales</h4>
+              <p>Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica, Panamá y República Dominicana</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div>
+              <h4>Gobierno corporativo y compliance</h4>
+              <p>Gestión de riesgos y cumplimiento normativo</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div>
+              <h4>Tecnologías aplicadas</h4>
+              <p>SAP, Oracle, Odoo, análisis de datos e IA en todos nuestros servicios</p>
+            </div>
+          </div>
+          <div class="expertise-item">
+            <div>
+              <h4>Sectores diversos</h4>
+              <p>Multinacionales, pymes, asociaciones y entidades sin fines de lucro</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 34px; padding: 24px; background: #fff; border: 1px solid var(--border); border-radius: 22px; box-shadow: var(--shadow); display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(135deg, rgba(8, 18, 24, 0.8), rgba(45, 186, 179, 0.7)); mix-blend-mode: multiply; z-index: 1;"></div>
+            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1200&q=80" alt="Mapa Central America" style="width: 100%; height: 260px; object-fit: cover;">
+            <div style="position: absolute; z-index: 2; text-align: center; color: #fff; padding: 0 20px;">
+               <h4 style="color: #fff; font-size: 1.55rem; margin-bottom: 12px; font-family: var(--font-heading);"><i class="fas fa-map-marked-alt" style="color: var(--teal-light); margin-right: 8px;"></i> Presencia y experiencia regional</h4>
+               <p style="color: rgba(255,255,255,0.9); font-size: 0.95rem; max-width: 520px; margin: 0 auto; line-height: 1.6;">Ofrecemos acompañamiento sólido en las diferentes jurisdicciones de Guatemala, El Salvador, Honduras, Nicaragua, Costa Rica y República Dominicana.</p>
+            </div>
+        </div>
+
+      </div>
+
+      <!-- Panel 3: Diferenciadores -->
+      <div class="about-tab-panel" id="tab-diff">
+        <div class="diff-grid">
+          <div class="diff-card">
+            <h4>Enfoque personalizado</h4>
+            <p>Cada cliente recibe un plan de trabajo adaptado a su estructura, riesgos y objetivos estratégicos.</p>
+          </div>
+          <div class="diff-card">
+            <h4>Innovación tecnológica</h4>
+            <p>Implementación de herramientas de análisis de datos, automatización e IA para auditorías más eficientes y
+              con mayor valor agregado.</p>
+          </div>
+          <div class="diff-card">
+            <h4>Ética y transparencia</h4>
+            <p>Cumplimos rigurosamente con los códigos de ética de IFAC y las regulaciones locales de cada país.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EQUIPO -->
+  <section class="section" id="equipo">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Equipo</span>
+        <h2>El equipo detrás de CC Consulting</h2>
+        <p>Liderazgo con experiencia, criterio profesional y una visión regional. <strong style="color: var(--teal);"></strong></p>
+      </div>
+
+      <div class="team-grid">
+        <article class="team-card"
+          data-name="Jorge Canizales Cruz"
+          data-role="Socio Director y Fundador"
+          data-photo="https://i.ibb.co/hvqbrgD/Whats-App-Image-2026-04-25-at-10-58-04-AM.jpg"
+          data-credentials="MBA|CPA|Experto Tributario"
+          data-bio="Líder estratégico con más de 20 años de experiencia en finanzas corporativas, fundador y socio director de CC Consulting. Especialista financiero y en Normas Internacionales de Información Financiera (NIIF), ha guiado a empresas multinacionales y pymes en procesos de transformación financiera y cumplimiento fiscal en toda la región."
+          data-years="20+"
+          data-countries="6"
+          data-clients="200+"
+          data-specialties="Estrategia Financiera|NIIF|Planeación Fiscal|Compliance|Reestructuración|Liderazgo Ejecutivo"
+          data-flags="gt:Guatemala|sv:El Salvador|ni:Nicaragua|hn:Honduras|cr:Costa Rica|do:República Dominicana"
+          data-email="Jlopez@ccconsulting.com.gt"
+          data-phone="+50250187451">
+          <img src="https://i.ibb.co/hvqbrgD/Whats-App-Image-2026-04-25-at-10-58-04-AM.jpg" alt="Jorge Canizales" class="team-avatar-img">
+          <h4>Jorge Canizales Cruz</h4>
+          <span class="team-role">Socio Director y Fundador</span>
+          <p>MBA, CPA. Especialista financiero y en NIIF, con más de 20 años de experiencia.</p>
+          <div class="flags">
+            <img src="https://flagcdn.com/gt.svg" alt="Guatemala">
+            <img src="https://flagcdn.com/sv.svg" alt="El Salvador">
+            <img src="https://flagcdn.com/ni.svg" alt="Nicaragua">
+            <img src="https://flagcdn.com/hn.svg" alt="Honduras">
+            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cr.svg" alt="Costa Rica">
+            <img src="https://flagcdn.com/do.svg" alt="República Dominicana">
+          </div>
+          <span class="view-card-cta">Ver tarjeta digital</span>
+        </article>
+
+        <article class="team-card"
+          data-name="Lester Danilo Castañeda"
+          data-role="Socio de Auditoría y Fundador"
+          data-photo="https://i.ibb.co/RpWGByCv/Whats-App-Image-2026-04-25-at-11-09-19-AM.jpg"
+          data-credentials="MBA|CPA|Experto Tributario"
+          data-bio="Socio fundador con sólida trayectoria en empresas multinacionales. Más de 25 años liderando auditorías financieras y de cumplimiento, así como asesorías financieras para corporaciones de gran envergadura. Su enfoque técnico y rigor profesional son referente en la región."
+          data-years="25+"
+          data-countries="6"
+          data-clients="250+"
+          data-specialties="Auditoría Financiera|Auditoría de Cumplimiento|NIA|Multinacionales|Riesgos|Control Interno"
+          data-flags="gt:Guatemala|sv:El Salvador|ni:Nicaragua|hn:Honduras|cr:Costa Rica|do:República Dominicana"
+          data-email="Jlopez@ccconsulting.com.gt"
+          data-phone="+50250187451">
+          <img src="https://i.ibb.co/RpWGByCv/Whats-App-Image-2026-04-25-at-11-09-19-AM.jpg" alt="Lester" class="team-avatar-img">
+          <h4>Lester Danilo Castañeda</h4>
+          <span class="team-role">Socio de Auditoría y Fundador</span>
+          <p>MBA, CPA. Especialista financiero con sólida experiencia en empresas multinacionales. Más de 25 años de experiencia.</p>
+          <div class="flags">
+            <img src="https://flagcdn.com/gt.svg" alt="Guatemala">
+            <img src="https://flagcdn.com/sv.svg" alt="El Salvador">
+            <img src="https://flagcdn.com/ni.svg" alt="Nicaragua">
+            <img src="https://flagcdn.com/hn.svg" alt="Honduras">
+            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cr.svg" alt="Costa Rica">
+            <img src="https://flagcdn.com/do.svg" alt="República Dominicana">
+          </div>
+          <span class="view-card-cta">Ver tarjeta digital</span>
+        </article>
+
+        <article class="team-card"
+          data-name="Dario Torres"
+          data-role="Socio El Salvador"
+          data-photo="https://i.ibb.co/RG0YXY2c/Whats-App-Image-2026-04-22-at-5-40-35-PM-1.jpg"
+          data-credentials="MSc|CPA"
+          data-bio="Asesor y consultor financiero con más de 25 años asesorando e innovando en empresas de todo giro. Reconocido experto tributario en El Salvador, ha implementado soluciones que combinan rigor técnico con visión estratégica para empresas locales y regionales."
+          data-years="25+"
+          data-countries="1"
+          data-clients="180+"
+          data-specialties="Asesoría Tributaria|Innovación Financiera|Consultoría Estratégica|Pymes|Multinacionales"
+          data-flags="sv:El Salvador"
+          data-email="Jlopez@ccconsulting.com.gt"
+          data-phone="+50370899071">
+          <img src="https://i.ibb.co/RG0YXY2c/Whats-App-Image-2026-04-22-at-5-40-35-PM-1.jpg" alt="Dario Torres" class="team-avatar-img">
+          <h4>Dario Torres</h4>
+          <span class="team-role">MSc, CPA · Socio El Salvador</span>
+          <p>Asesor y consultor financiero, experto tributario con más de 25 años asesorando e innovando.</p>
+          <div class="flags">
+            <img src="https://flagcdn.com/sv.svg" alt="El Salvador">
+          </div>
+          <span class="view-card-cta">Ver tarjeta digital</span>
+        </article>
+      </div>
+
+      <div class="team-row-2">
+        <article class="team-card"
+          data-name="Carlos Rayo"
+          data-role="Socio Nicaragua"
+          data-photo="https://i.ibb.co/Zz2SSrCj/Whats-App-Image-2026-04-22-at-5-40-35-PM-2.jpg"
+          data-credentials="MSc|CPA|Experto Tributarista"
+          data-bio="Experto tributarista con enfoque integral. Adicional al área fiscal, su práctica abarca auditorías, asesoría empresarial, cumplimiento normativo y manejo de contingencias. Reconocido en Nicaragua por su capacidad de articular soluciones técnicas con visión de negocio."
+          data-years="20+"
+          data-countries="1"
+          data-clients="150+"
+          data-specialties="Tributación|Auditoría|Asesoría Empresarial|Cumplimiento|Contingencias Fiscales"
+          data-flags="ni:Nicaragua"
+          data-email="Jlopez@ccconsulting.com.gt"
+          data-phone="+50587002403">
+          <img src="https://i.ibb.co/Zz2SSrCj/Whats-App-Image-2026-04-22-at-5-40-35-PM-2.jpg" alt="Carlos Rayo" class="team-avatar-img">
+          <h4>Carlos Rayo</h4>
+          <span class="team-role">MSC, CPA · Socio Nicaragua</span>
+          <p>Experto tributarista. Enfocado en auditorías, asesoría empresarial, cumplimiento y contingencias.</p>
+          <div class="flags">
+            <img src="https://flagcdn.com/ni.svg" alt="Nicaragua">
+          </div>
+          <span class="view-card-cta">Ver tarjeta digital</span>
+        </article>
+
+        <article class="team-card"
+          data-name="Fabio Mora"
+          data-role="Experto Asesor Financiero"
+          data-photo="https://i.ibb.co/C5tcMf3f/Whats-App-Image-2026-04-22-at-5-40-35-PM-3.jpg"
+          data-credentials="CPA|Experto Tributario"
+          data-bio="Especialista en estructura financiera, rentabilidad y eficiencia operativa. Su acompañamiento empresarial combina diagnóstico riguroso con planes de acción ejecutables, ayudando a empresas costarricenses a optimizar sus operaciones y maximizar resultados."
+          data-years="18+"
+          data-countries="1"
+          data-clients="120+"
+          data-specialties="Estructura Financiera|Rentabilidad|Eficiencia Operativa|Acompañamiento Empresarial|Pymes"
+          data-flags="cr:Costa Rica"
+          data-email="Jlopez@ccconsulting.com.gt"
+          data-phone="+50689249531">
+          <img src="https://i.ibb.co/C5tcMf3f/Whats-App-Image-2026-04-22-at-5-40-35-PM-3.jpg" alt="Fabio Mora" class="team-avatar-img">
+          <h4>Fabio Mora</h4>
+          <span class="team-role">CPA · Experto asesor financiero</span>
+          <p>Especialista en estructura financiera, rentabilidad, eficiencia operativa y acompañamiento empresarial.</p>
+          <div class="flags">
+            <img src="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cr.svg" alt="Costa Rica">
+          </div>
+          <span class="view-card-cta">Ver tarjeta digital</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUSINESS CARD MODAL -->
+  <div class="bc-modal" id="bcModal" aria-hidden="true">
+    <div class="bc-card" role="dialog" aria-modal="true">
+      <button class="bc-close" id="bcClose" aria-label="Cerrar tarjeta">
+        <i class="fas fa-times"></i>
+      </button>
+      <span class="bc-deco-dot"></span>
+      <span class="bc-deco-dot"></span>
+      <span class="bc-deco-dot"></span>
+      <div class="bc-content">
+        <div class="bc-left">
+          <div class="bc-watermark" id="bcWatermark">CC</div>
+          <div class="bc-photo-wrap">
+            <img class="bc-photo" id="bcPhoto" src="" alt="">
+          </div>
+          <div class="bc-name-block">
+            <h3 class="bc-name" id="bcName"></h3>
+            <span class="bc-role" id="bcRole"></span>
+          </div>
+          <div class="bc-credentials" id="bcCreds"></div>
+        </div>
+        <div class="bc-right">
+          <div class="bc-section">
+            <div class="bc-section-label"><i class="fas fa-user"></i> Acerca de</div>
+            <p class="bc-bio" id="bcBio"></p>
+          </div>
+          <div class="bc-section">
+            <div class="bc-section-label"><i class="fas fa-chart-line"></i> Trayectoria</div>
+            <div class="bc-stats">
+              <div class="bc-stat"><strong id="bcYears"></strong><span>Años de exp.</span></div>
+              <div class="bc-stat"><strong id="bcCountries"></strong><span>Países</span></div>
+              <div class="bc-stat"><strong id="bcClients"></strong><span>Clientes</span></div>
+            </div>
+          </div>
+          <div class="bc-section">
+            <div class="bc-section-label"><i class="fas fa-bolt"></i> Áreas de especialidad</div>
+            <div class="bc-specialties" id="bcSpecs"></div>
+          </div>
+          <div class="bc-section">
+            <div class="bc-section-label"><i class="fas fa-globe"></i> Cobertura regional</div>
+            <div class="bc-flags-detail" id="bcFlagsDetail"></div>
+          </div>
+          <div class="bc-section">
+            <div class="bc-actions">
+              <a class="bc-btn bc-btn-primary" id="bcWhatsApp" href="#" target="_blank">
+                <i class="fab fa-whatsapp"></i> Contactar por WhatsApp
+              </a>
+              <a class="bc-btn bc-btn-ghost" id="bcEmail" href="#">
+                <i class="fas fa-envelope"></i> Enviar correo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACTO -->
+  <section class="section bg-light" id="contacto">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Contacto</span>
+        <h2>Hablemos de tu empresa</h2>
+        <p>Cuéntanos tu necesidad y te ayudaremos a estructurar una solución financiera, fiscal o de auditoría a medida.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-panel" data-aos="fade-right">
+          <h3>Sede central</h3>
+          <p>Ciudad de Guatemala · Gran centro comercial de la zona 4 · Torre 2</p>
+
+          <div class="contact-info-list">
+            <a href="https://www.google.com/maps/search/Gran+Centro+Comercial+Zona+4+Torre+2+Ciudad+de+Guatemala" target="_blank" rel="noopener" class="info-item" style="text-decoration:none;color:inherit;cursor:pointer;">
+              <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <strong>Ubicación</strong>
+                <span>Ciudad de Guatemala<br />Gran centro comercial de la zona 4, Torre 2, Oficina 208</span>
+              </div>
+            </a>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-envelope"></i></div>
+              <div>
+                <strong>Correo</strong>
+                <span>Jlopez@ccconsulting.com.gt</span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div>
+                <strong>Teléfonos</strong>
+                <span>
+                  +502 5018-7451 Guatemala<br />
+                  +503 70899071 El Salvador<br />
+                  +505 87002403 Nicaragua<br />
+                  +506 89249531 Costa Rica
+                </span>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <strong>Horario de atención</strong>
+                <span>
+                  Lunes a Viernes: 8:00 AM – 6:00 PM<br />
+                  Sábados: 8:00 AM – 12:00 PM
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="contact-form-wrap" data-aos="fade-left">
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombre">Nombre completo *</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Correo electrónico *</label>
+                <input type="email" id="email" name="email" placeholder="correo@empresa.com" required />
+              </div>
+              <div class="form-group">
+                <label for="pais">País *</label>
+                <select id="pais" name="pais" required>
+                  <option value="">Seleccionar país</option>
+                  <option value="gt">Guatemala</option>
+                  <option value="sv">El Salvador</option>
+                  <option value="ni">Nicaragua</option>
+                  <option value="hn">Honduras</option>
+                  <option value="cr">Costa Rica</option>
+                  <option value="do">República Dominicana</option>
+                  <option value="otro">Otro</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="servicio">Servicio de interés</label>
+              <select id="servicio" name="servicio">
+                <option value="">Seleccionar servicio</option>
+                <option>Asesoría fiscal y tributaria</option>
+                <option>Asesoría financiera y procesos</option>
+                <option>Estudios de precios de transferencia</option>
+                <option>Auditoría</option>
+                <option>Contabilidad</option>
+                <option>Estados financieros</option>
+                <option>Declaraciones de impuestos</option>
+                <option>Constitución de empresas</option>
+                <option>Nóminas</option>
+                <option>Cumplimiento tributario</option>
+                <option>Varios servicios</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje *</label>
+              <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos sobre tu empresa y cómo podemos ayudarte..."
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              <i class="fas fa-paper-plane"></i> Enviar mensaje
+            </button>
+
+            <p class="form-note">
+              Al enviar este formulario aceptas nuestra política de privacidad. Tu información será tratada con estricta
+              confidencialidad.
+            </p>
+          </form>
+
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon"><i class="fas fa-circle-check"></i></div>
+            <h3 style="margin-bottom:10px;">¡Mensaje enviado!</h3>
+            <p>Gracias por contactar a CC Consulting. Nuestro equipo te responderá a la brevedad.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="https://i.ibb.co/jP2VLgYp/Designer-4.png" alt="CC Consulting" class="footer-logo" />
+          <p>
+            Firma de auditoría y consultoría con presencia en Centroamérica y República Dominicana.
+            Soluciones financieras, fiscales y estratégicas para empresas que buscan crecer con confianza.
+          </p>
+        </div>
+
+        <div class="footer-col" style="display:none;">
+          <h5>Navegación</h5>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#nosotros">Quiénes somos</a></li>
+            <li><a href="#equipo">Equipo</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Servicios</h5>
+          <ul>
+            <li><a href="#servicios">Asesoría fiscal y tributaria</a></li>
+            <li><a href="#servicios">Asesoría financiera y procesos</a></li>
+            <li><a href="#servicios">Auditoría</a></li>
+            <li><a href="#servicios">Contabilidad</a></li>
+            <li><a href="#servicios">Precios de transferencia</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Contacto</h5>
+          <ul class="footer-contact">
+            <li><a href="https://www.google.com/maps/search/Gran+Centro+Comercial+Zona+4+Torre+2+Ciudad+de+Guatemala" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala, Zona 4, Torre 2, Oficina 208</a></li>
+            <li><i class="fas fa-envelope"></i> Jlopez@ccconsulting.com.gt</li>
+            <li><i class="fas fa-phone"></i> +502 5018-7451</li>
+            <li><i class="fas fa-phone"></i> +503 70899071</li>
+            <li><i class="fas fa-phone"></i> +505 87002403</li>
+            <li><i class="fas fa-phone"></i> +506 89249531</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 CC Consulting. Todos los derechos reservados.</p>
+        <p>Auditoría · Fiscal · Financiero · Centroamérica y República Dominicana</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCROLL TOP -->
+  <button class="scroll-top" id="scrollTop" aria-label="Volver arriba">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- WHATSAPP WIDGET -->
+  <div class="wa-widget" id="waWidget">
+    <div class="wa-window" id="waWindow">
+      <div class="wa-header">
+        <div class="wa-avatar">
+          <img src="https://i.ibb.co/jP2VLgYp/Designer-4.png" alt="CC Consulting">
+          <span class="wa-status"></span>
+        </div>
+        <div class="wa-info">
+          <h4>CC Consulting</h4>
+          <p>Respondemos de inmediato</p>
+        </div>
+      </div>
+      <div class="wa-body">
+        <div class="wa-chat-bubble">
+          <strong>Asesor Financiero</strong>
+          <p>¡Hola! 👋<br>¿Te gustaría recibir asesoría o potenciar el crecimiento de tu empresa?</p>
+          <span class="wa-time">Ahora</span>
+        </div>
+      </div>
+      <div class="wa-footer">
+        <a href="https://wa.me/50250187451?text=Hola,%20busco%20asesoría%20sobre%20los%20servicios%20de%20CC%20Consulting"
+          target="_blank" class="wa-cta">
+          <i class="fab fa-whatsapp"></i> Abrir Chat en WhatsApp
+        </a>
+      </div>
+    </div>
+    <div class="wa-fab" id="waToggle" aria-label="Abrir WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </div>
+  </div>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      AOS.init({ once: true, duration: 850, offset: 80, easing: 'ease-out-cubic' });
+      initNavbar();
+      initHamburger();
+      initActiveNavLinks();
+      initSmoothScroll();
+      initScrollTop();
+      initContactForm();
+      initAboutTabs();
+      initWhatsApp();
+      initBusinessCardModal();
+    });
+
+    /* -- WHATSAPP WIDGET LOGIC -- */
+    function initWhatsApp() {
+      const waToggle = document.getElementById('waToggle');
+      const waWindow = document.getElementById('waWindow');
+      if (!waToggle || !waWindow) return;
+
+      const waIcon = waToggle.querySelector('i');
+
+      waToggle.addEventListener('click', () => {
+        waWindow.classList.toggle('active');
+        waToggle.classList.toggle('open');
+        if (waWindow.classList.contains('active')) {
+          waIcon.className = 'fas fa-times';
+        } else {
+          waIcon.className = 'fab fa-whatsapp';
+        }
+      });
+
+      // Mostrar atención inmediatamente, pero desaparecer tras un tiempo breve
+      setTimeout(() => {
+        if (!waWindow.classList.contains('active')) {
+          waWindow.classList.add('active');
+          waToggle.classList.add('open');
+          waIcon.className = 'fas fa-times';
+          setTimeout(() => {
+            if (waWindow.classList.contains('active')) {
+              waToggle.click(); // Cerrar
+            }
+          }, 4000);
+        }
+      }, 2500);
+    }
+
+
+
+    function initAboutTabs() {
+      const btns = document.querySelectorAll('.tab-btn');
+      const panels = document.querySelectorAll('.about-tab-panel');
+      btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          btns.forEach(b => b.classList.remove('active'));
+          panels.forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.tab).classList.add('active');
+        });
+      });
+    }
+
+    function initNavbar() {
+      const navbar = document.getElementById('navbar');
+      const onScroll = () => {
+        if (window.scrollY > 30) navbar.classList.add('scrolled');
+        else navbar.classList.remove('scrolled');
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    }
+
+    function initHamburger() {
+      const btn = document.getElementById('hamburger');
+      const links = document.getElementById('navLinks');
+      if (!btn || !links) return;
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('open');
+        links.classList.toggle('open');
+      });
+      links.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          btn.classList.remove('open');
+          links.classList.remove('open');
+        });
+      });
+      document.addEventListener('click', (e) => {
+        if (!btn.contains(e.target) && !links.contains(e.target)) {
+          btn.classList.remove('open');
+          links.classList.remove('open');
+        }
+      });
+    }
+
+    function initActiveNavLinks() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            navLinks.forEach(link => {
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+            });
+          }
+        });
+      }, { rootMargin: '-40% 0px -45% 0px', threshold: 0.02 });
+      sections.forEach(section => observer.observe(section));
+    }
+
+    function initSmoothScroll() {
+      document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetId = link.getAttribute('href').slice(1);
+          const target = document.getElementById(targetId);
+          if (!target) return;
+          e.preventDefault();
+          const navbar = document.getElementById('navbar');
+          const navHeight = navbar ? navbar.offsetHeight : 0;
+          const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 8;
+          window.scrollTo({ top, behavior: 'smooth' });
+        });
+      });
+    }
+
+    function initScrollTop() {
+      const btn = document.getElementById('scrollTop');
+      if (!btn) return;
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) btn.classList.add('show');
+        else btn.classList.remove('show');
+      }, { passive: true });
+      btn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    function initContactForm() {
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      if (!form) return;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = form.querySelector('button[type="submit"]');
+        const original = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        btn.disabled = true;
+        const data = {
+          nombre: form.nombre.value.trim(),
+          empresa: form.empresa.value.trim(),
+          email: form.email.value.trim(),
+          pais: form.pais.value,
+          servicio: form.servicio.value,
+          mensaje: form.mensaje.value.trim(),
+        };
+        try {
+          await fetch('tables/contactos', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data),
+          });
+          form.style.display = 'none';
+          success.classList.add('show');
+        } catch (error) {
+          form.style.display = 'none';
+          success.classList.add('show');
+          console.warn('No se pudo guardar el contacto:', error);
+        } finally {
+          btn.innerHTML = original;
+          btn.disabled = false;
+        }
+      });
+    }
+
+    function initBusinessCardModal() {
+      const cards = document.querySelectorAll('.team-card[data-name]');
+      const modal = document.getElementById('bcModal');
+      const closeBtn = document.getElementById('bcClose');
+      if (!modal || !cards.length) return;
+      const $ = (id) => document.getElementById(id);
+
+      function openCard(card) {
+        const data = card.dataset;
+        $('bcPhoto').src = data.photo;
+        $('bcPhoto').alt = data.name;
+        $('bcName').textContent = data.name;
+        $('bcRole').textContent = data.role;
+        const initials = data.name.split(' ').filter(Boolean).slice(0, 2).map(n => n[0]).join('');
+        $('bcWatermark').textContent = initials;
+
+        const credBox = $('bcCreds');
+        credBox.innerHTML = '';
+        data.credentials.split('|').forEach(cred => {
+          const isExpert = cred.toLowerCase().includes('experto') || cred.toLowerCase().includes('tributari');
+          credBox.insertAdjacentHTML('beforeend',
+            `<span class="bc-cred-badge"><i class="fas ${isExpert ? 'fa-award' : 'fa-graduation-cap'}"></i>${cred}</span>`);
+        });
+
+        $('bcBio').textContent = data.bio;
+        $('bcYears').textContent = data.years;
+        $('bcCountries').textContent = data.countries;
+        $('bcClients').textContent = data.clients;
+
+        const specBox = $('bcSpecs');
+        specBox.innerHTML = '';
+        data.specialties.split('|').forEach(s => {
+          specBox.insertAdjacentHTML('beforeend', `<span class="bc-spec">${s}</span>`);
+        });
+
+        const flagBox = $('bcFlagsDetail');
+        flagBox.innerHTML = '';
+        data.flags.split('|').forEach(f => {
+          const [code, name] = f.split(':');
+          const flagUrl = code === 'cr'
+            ? 'https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/flags/4x3/cr.svg'
+            : `https://flagcdn.com/${code}.svg`;
+          flagBox.insertAdjacentHTML('beforeend',
+            `<span class="bc-flag-pill"><img src="${flagUrl}" alt="${name}">${name}</span>`);
+        });
+
+        const phone = data.phone.replace(/\D/g, '');
+        const waMsg = encodeURIComponent(`Hola ${data.name.split(' ')[0]}, me gustaría conversar sobre los servicios de CC Consulting.`);
+        $('bcWhatsApp').href = `https://wa.me/${phone}?text=${waMsg}`;
+        $('bcEmail').href = `mailto:${data.email}?subject=Consulta%20-%20${encodeURIComponent(data.name)}`;
+
+        modal.classList.add('open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeCard() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      cards.forEach(card => {
+        card.addEventListener('click', () => openCard(card));
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openCard(card); }
+        });
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('role', 'button');
+        card.setAttribute('aria-label', `Ver tarjeta de ${card.dataset.name}`);
+      });
+      closeBtn.addEventListener('click', closeCard);
+      modal.addEventListener('click', (e) => { if (e.target === modal) closeCard(); });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('open')) closeCard();
+      });
+    }
+  </script>
+</body>
+
+</html>
